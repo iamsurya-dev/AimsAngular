@@ -6,9 +6,38 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/app.css">
+
+	<!-- AngularJS library -->
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="client/controllers/TestController.js"></script>
+	<script type="text/javascript" src="client/directives/GradSchoolDirective.js"></script>
 	<title>AngularJS Tutorial</title>
 </head>
 <body>
 	<h1>Welcome to AngularJS Tutorial!</h1>
+	<!-- <div ng-controller="test_controller">
+		<input type="text" ng-model="textInput">
+		<label>This will change like magic {{textInput}}</label>
+	</div> -->
+	<div ng-controller="msim_controller">
+		<div>Name: <input type="text" ng-model="details.name"></div>
+		<div>Phone Number: <input type="text" ng-model="details.phno"></div>
+		<div>
+			Specialization:
+			<select ng-model="details.specialization">
+				<option ng-repeat="item in specialization" value="item.val">{{item.label}}</option>
+			</select>
+		</div>
+		<span>
+			<button ng-click="clearAllValues()">Clear Values</button>
+			<button ng-click="submitAllValues(details)">Submit</button>	
+		</span>
+		
+		<!-- <grad-school given-specialization="specialization" student-details="details" clear-values="clearAllValues()"></grad-school> -->
+	</div>
+
+	
 </body>
 </html>

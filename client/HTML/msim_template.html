@@ -1,0 +1,9 @@
+<div>Name: <input type="text" ng-model="studentDetails.name"></div>
+<div>Phone Number: <input type="text" ng-model="studentDetails.phno"></div>
+<div>
+	Specialization:
+	<select ng-model="studentDetails.specialization">
+		<option ng-repeat="item in givenSpecialization" value="item.val">{{item.label}}</option>
+	</select>
+</div>
+<button ng-click="clearValues()">Clear Values</button>
